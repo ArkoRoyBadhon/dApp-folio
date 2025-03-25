@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+  }
+}
+@keyframes glowHover {
+  0% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.9);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin 15s linear infinite;
+}
+
+/* button animate  */
+@keyframes move-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-move-right {
+  animation: move-right 0.5s infinite;
+}
+
+.animate-pulse {
+  animation: glow 2s infinite;
+}
+.animate-pulse:hover {
+  animation: glowHover 2s infinite;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.7);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.8);
+  }
+}
+
+.animate-text-glow {
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s infinite;
+}
+
+
+/* banner wave  */
+.custom-shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(152% + 1.3px);
+  height: 137px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom .shape-fill {
+  /* fill: #f3f4f6; */
+  /* fill: #101828; */
+  fill: #364153;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom svg {
+      width: calc(140% + 1.3px);
+      height: 137px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1742284972 svg {
+      width: calc(144% + 1.3px);
+      height: 123px;
+  }
+}
+
+@layer components {
+  .projects-wrapper {
+    @apply h-fit lg:h-screen overflow-hidden bg-gray-900 w-full;
+  }
+
+  .projects {
+    @apply flex flex-nowrap w-fit md:w-[600px] lg:w-[800px] mx-auto h-[1600px];
+  }
+  
+}
