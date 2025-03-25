@@ -3,6 +3,12 @@
 ## live link 
 ## https://arkofolio.vercel.app/
 
+## Technology *
+- React Js
+- Tailwind Css
+- GSAP
+- Solidity
+- Ether js
 
 ## ** Note **
 - you need a metamask account to access this portfolio
